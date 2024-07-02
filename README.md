@@ -32,9 +32,8 @@ docker build -t fibonacci_api
 
 docker run -p 4000:4000 fibonacci_api
 
-# Production Deployment
+# Production Deployment and Scaling
 For production deployment, I would use Azure. I can use Docker to containerize the application and Kubernetes for orchestration. I would implement CI/CD pipelines using tools like Azure Devops, GitHub Actions, Jenkins, or Travis CI. Add monitoring using tools like Container insights, Azure Monitor managed service for Prometheus, Azure Managed Grafana, Prometheus and Grafana, and logging using ELK stack (Elasticsearch, Logstash, and Kibana).
+To handle high traffic, use load balancers and auto-scaling features provided by cloud services. I will ensure the application is stateless to allow horizontal scaling.
 
-# Scaling
-To handle high traffic, use load balancers and auto-scaling features provided by cloud services. Ensure the application is stateless to allow horizontal scaling.
-
+Second options is use Container instance with azure traffic manager which providing DNS traffic manager with load balancing, also it's providing autoscalling without any need of cluster configuration for API and without cost of VM scale set.
